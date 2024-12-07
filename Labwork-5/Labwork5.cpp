@@ -152,7 +152,7 @@ int Labwork5::Task1InputR2(double& R2)
 	return NO_EXCEPTION;
 }
 
-int Labwork5::Task1Parse(double* R1Array, double* R2Array, double* resulArray, int length)
+int Labwork5::Task1Parse(double* R1Array, double* R2Array, double* resultArray, int length)
 {
 	return 0;
 }
@@ -276,9 +276,12 @@ bool* Labwork5::Task2(int N, int* KArray, int length)
 	return resultArray;
 }
 
-bool Labwork5::isPowerN(int N, int K)
+bool Labwork5::isPowerN(int K, int N)
 {
 	int power = 1;
+
+	if (N == 1)
+		return K == 1;
 
 	while (power < K)
 		power *= N;
@@ -499,7 +502,7 @@ double** Labwork5::Task4(double** jaggedABCArray, int length)
 		resultJaggedArray[i] = new double[3];
 
 		for (int j = 0; j < 3; j++)
-			resultJaggedArray[i][j] == jaggedABCArray[i][j];
+			resultJaggedArray[i][j] = jaggedABCArray[i][j];
 
 		sortInc3(resultJaggedArray[i][0], resultJaggedArray[i][1], resultJaggedArray[i][2]);
 	}
@@ -547,17 +550,17 @@ int Labwork5::Task5main()
 
 char Labwork5::ArithmeticMean(char A, char B)
 {
-	return ArithmeticMeanT<char>(A, B);
+	return (A + B) / 2;
 }
 
 long Labwork5::ArithmeticMean(long A, long B)
 {
-	return ArithmeticMeanT<long>(A, B);
+	return (A + B) / 2;
 }
 
 double Labwork5::ArithmeticMean(double A, double B)
 {
-	return ArithmeticMeanT<double>(A, B);
+	return (A + B) / 2;
 }
 
 template <typename T>

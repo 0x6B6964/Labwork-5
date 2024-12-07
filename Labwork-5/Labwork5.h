@@ -23,7 +23,7 @@ private:
 	static int Task1InputLength(int& length);
 	static int Task1InputR1(double& R1);
 	static int Task1InputR2(double& R2);
-	static int Task1Parse(double* R1Array, double* R2Array, double* resulArray, int length);
+	static int Task1Parse(double* R1Array, double* R2Array, double* resultArray, int length);
 	static int Task1CleanMemory(double*& R1Array, double*& R2Array, double*& resultArray);
 public:
 	static double* Task1(double* R1Array, double* R2Array, int length);
