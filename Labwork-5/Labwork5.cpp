@@ -496,6 +496,8 @@ double** Labwork5::Task4(double** jaggedABCArray, int length)
 	double** resultJaggedArray = new double* [length];
 
 	for (int i = 0; i < length; i++) {
+		resultJaggedArray[i] = new double[3];
+
 		for (int j = 0; j < 3; j++)
 			resultJaggedArray[i][j] == jaggedABCArray[i][j];
 
@@ -523,7 +525,45 @@ void Labwork5::sortInc3(double& A, double& B, double& C)
 
 int Labwork5::Task5main()
 {
+	char chA = 1;
+	char chB = 11;
+	long lA = 2;
+	long lB = 6;
+	double dA = 21.3;
+	double dB = 8.32;
+
+	ArithmeticMean(chA, chB);
+	ArithmeticMean(lA, lB);
+	ArithmeticMean(dA, dB);
+
+	//ArithmeticMean(chA, lB); // Causes error E0308
+
+	ArithmeticMeanT<char>(chA, chB);
+	ArithmeticMeanT<long>(lA, lB);
+	ArithmeticMeanT<double>(dA, dB);
+
 	return 0;
+}
+
+char Labwork5::ArithmeticMean(char A, char B)
+{
+	return ArithmeticMeanT<char>(A, B);
+}
+
+long Labwork5::ArithmeticMean(long A, long B)
+{
+	return ArithmeticMeanT<long>(A, B);
+}
+
+double Labwork5::ArithmeticMean(double A, double B)
+{
+	return ArithmeticMeanT<double>(A, B);
+}
+
+template <typename T>
+T Labwork5::ArithmeticMeanT(T A, T B)
+{
+	return (A + B) / 2;
 }
 
 #pragma endregion

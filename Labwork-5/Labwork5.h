@@ -84,8 +84,13 @@ public:
 
 private:
 	static int Task5main();
+public:
+	static char ArithmeticMean(char A, char B);
+	static long ArithmeticMean(long A, long B);
+	static double ArithmeticMean(double A, double B);
+	template <typename T>
+	static T ArithmeticMeanT(T A, T B = 0);
 
 #pragma endregion
 
 };
-
